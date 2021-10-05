@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <launch>
-  <node pkg="ntrip_ros" type="ntripclient.py" name="ntrip_ros" output="screen">
+  <node pkg="ntrip_ros" type="ntripclient.py" name="ntrip_ros" output="log" respawn="true">
     <param name="rtcm_topic" value="/rtcm"/>
     <param name="ntrip_server" value="auscors.ga.gov.au:2101"/>
     <param name="ntrip_user" value="bfan6751"/>
     <param name="ntrip_pass" value="pu5GpghCAD"/>
     <param name="ntrip_stream" value="SYDN00AUS0"/>
     <param name="nmea_gga" value="$GPGGA,011140.207,3346.338,S,15111.147,E,1,12,1.0,0.0,M,0.0,M,,*7E"/> 
-    <!-- nmea_gga generated at East Lindfield, NSW, probably not needed for AUSCORS network -->
+    <!-- nmea_gga generated at East Lindfield, NSW, not needed for AUSCORS network due to manual selection of mountpoint (ntrip_stream) -->
   </node>
 </launch>
 
